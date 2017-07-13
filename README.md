@@ -1,6 +1,7 @@
 # ForcedAlignment
 
 ForcedAlignment is a graphical tool to automatically synchronize audio and text.
+
 Contact: fandrei2000@yahoo.com
 
 # Goal
@@ -27,3 +28,8 @@ Select the text file, the audio file, and the language for both files and a html
 
 # License
 ForcedAlignment is released under the terms of the GNU General Public License Version 3. See the LICENSE file for details.
+
+# Files
+ForcedAlignment_python2_1.py for python2
+
+ForcedAlignment_python3_1.py for python3

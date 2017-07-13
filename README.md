@@ -9,7 +9,7 @@ Contact: fandrei2000@yahoo.com
 # System Requirements, Supported Platforms and Installation
 
 # System Requirements
-1. Python 3.x or later
+1. Python 2.x or 3.x or later
 2. Aeneas https://github.com/readbeyond/aeneas/
 3. A html5 compatible browser (for the audio tag)
 4. Depending on the browser the audio file can have many audio formats.

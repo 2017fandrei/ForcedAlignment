@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Automagically synchronize audio and text (aka forced alignment) 
+</title>
+<meta charset="UTF-8"> 
+</head>
+<body>
+
+<script>
+var times = [0.000, 2.040, 4.840, 6.280, 6.600, 7.360, 10.280, 12.640, 13.520, 15.680, 17.040, 18.520, 19.360, 20.520, 23.560, 24.040, 24.800, 27.480, 29.320, 36.040];
+
+function switchColors(element)
+{
+links=document.getElementsByTagName("span") ;
+for (var i = 0 ; i < links.length ; i ++){
+links.item(i).style.color = 'black' ;
+links.item(i).style.backgroundColor = 'white' ;
+}
+element.style.color='red' ;
+element.style.backgroundColor='yellow' ;
+}
+
+function goToTime(time) {
+    var vid = document.getElementById("myAudio");
+//first make sure the audio player is playing
+    vid.play(); 
+//second seek to the specific time you're looking for
+    vid.currentTime = time;
+   }
+
+var spans = document.getElementsByTagName('span');
+
+function myFunction1(event) {
+for (var j=0;j<spans.length;j++) {
+//document.write(spans[j].innerHTML);
+var target = spans[j];
+if (event.currentTime > times[j] && event.currentTime < times[j+1]){
+target.style.color = "red";
+target.style.backgroundColor = "yellow";
+//target.style.font-weight = "bold";
+} else{
+target.style.color = "black";
+target.style.backgroundColor = "white";
+//target.style.font-weight = "normal";
+}
+}
+}
+</script>
+
+<table>
+<tr>
+<td style="text-align:center;">
+<p>
+<audio controls id="myAudio" ontimeupdate="myFunction1(this)">
+   <source src="The Dog And His Image.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+</td>
+</tr>
+
+<tr>
+<td>
+            <div style="width:80%; max-height:20em; margin: 0 auto; overflow:auto; text-align:justify" >
+<ul>
+<li>
+    <span  onclick="switchColors(this); goToTime(0.000);">The Dog and his image from,</span>
+    <span  onclick="switchColors(this); goToTime(2.040);">Fables in Rhyme for Little Folks by Jean de La FONTAINE,</span>
+    <span  onclick="switchColors(this); goToTime(4.840);">translated by W.</span>
+    <span  onclick="switchColors(this); goToTime(6.280);">T.</span>
+    <span  onclick="switchColors(this); goToTime(6.600);">Larned.</span>
+    <span  onclick="switchColors(this); goToTime(7.360);">Read for librivox.org by Karen Savage.</span>
+    <span  onclick="switchColors(this); goToTime(10.280);">The Dog And His Image.</span>
+    <span  onclick="switchColors(this); goToTime(12.640);">A foolish Dog,</span>
+    <span  onclick="switchColors(this); goToTime(13.520);">who carried in his jaw A juicy bone,</span>
+    <span  onclick="switchColors(this); goToTime(15.680);">Looked down into a stream,</span>
+    <span  onclick="switchColors(this); goToTime(17.040);">and there he saw Another one,</span>
+    <span  onclick="switchColors(this); goToTime(18.520);">Splash!</span>
+    <span  onclick="switchColors(this); goToTime(19.360);">In he plunged..</span>
+    <span  onclick="switchColors(this); goToTime(20.520);">The image disappeared-- The meat he had was gone.</span>
+    <span  onclick="switchColors(this); goToTime(23.560);">Indeed,</span>
+    <span  onclick="switchColors(this); goToTime(24.040);">he nearly sank,</span>
+    <span  onclick="switchColors(this); goToTime(24.800);">And barely reached the bank.</span>
+    <span  onclick="switchColors(this); goToTime(27.480);">End of "The dog and his image".</span>
+    <span  onclick="switchColors(this); goToTime(29.320);">This recording is in the public domain</span>
+
+</li>
+</ul>
+             </div>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
